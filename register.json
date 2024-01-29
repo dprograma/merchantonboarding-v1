@@ -1,0 +1,45 @@
+{
+  "data": {
+    "username": "john_doe",
+    "password": "securepassword",
+    "email": "john@example.com",
+    "first_name": "John",
+    "last_name": "Doe",
+    "address": {
+      "street": "123 Main St",
+      "city": "Anytown",
+      "state": "Lagos",
+      "postal_code": "12345",
+      "country": "Nigeria"
+    },
+    "phone_numbers": [
+      {
+        "type": "home",
+        "number": "08131234567"
+      },
+      {
+        "type": "work",
+        "number": "08131234567"
+      }
+    ],
+    "birthdate": "1990-05-15",
+    "gender": "male",
+    "interests": ["hiking", "reading", "cooking"],
+    "education": {
+      "degree": "Bachelor's in Computer Science",
+      "university": "University of Example",
+      "graduation_year": 2012
+    },
+    "employment": {
+      "company": "Tech Corp",
+      "position": "Software Engineer",
+      "start_date": "2012-06-01"
+    },
+    "social_profiles": {
+      "linkedin": "https://www.linkedin.com/in/johndoe",
+      "X(twitter)": "https://x.com/johndoe"
+    },
+    "avatar_url": "https://example.com/johndoe-avatar.jpg",
+    "bio": "I'm a software engineer with a passion for technology and innovation. I enjoy coding, reading, and exploring the outdoors."
+  }
+}

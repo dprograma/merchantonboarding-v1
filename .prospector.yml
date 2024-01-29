@@ -1,0 +1,71 @@
+# .prospector.yml
+
+# Specify the directories to be analyzed (you can add more if needed)
+directories:
+  - onboarding, kyc, tests
+
+# Set the tool profiles to be used (you can enable/disable specific tools)
+profile:
+  pep8: true       # Check for PEP 8 compliance
+  mccabe: true     # Complexity checker
+  radon: true      # Maintainability index
+  dodgy: true      # Check for the use of dodgy words
+  xenon: true      # Check code complexity based on McCabe's Cyclomatic Complexity
+  bandit: true     # Static security analysis for Python code
+  vulture: true    # Detect unused code
+  pylint: true     # Python linting
+
+# Configuration for each tool (optional)
+
+# PEP 8 (pycodestyle) options
+pep8:
+  max-line-length: 120   # Maximum line length allowed
+
+# McCabe options
+mccabe:
+  min-avg-complexity: 5  # Minimum average complexity allowed
+
+# Radon options
+radon:
+  cc-min: A            # Minimum complexity rating (A, B, C, or F)
+  show-closures: true  # Show complexity per module and per function
+
+
+# Pylint options
+pylint:
+  enabled: true        # Enable/disable pylint (overrides 'profile' setting)
+  config: .pylintrc    # Path to custom pylint configuration file
+  ignore:              # Ignore specific messages or message categories
+    - missing-docstring
+
+# Other options
+# Note: The options below are just examples. You can customize them based on your needs.
+
+# File Extensions to Analyze
+file-extensions:
+  - .py
+  - .pyi
+
+# Ignored Files or Directories (relative to the project root)
+ignore:
+  - venv/     # Ignore the virtual environment directory
+  - static/     # Ignore the static directory
+  - staticfiles/     # Ignore the staticfiles directory
+  - merchantonboardingservice/     # Ignore the holladeliveries directory
+  - coverage_report/     # Ignore the coverage_report directory
+  - .mypy_cache/     # Ignore the .mypy_cache directory
+  - .pytest_cache/     # Ignore the .pytest_cache directory
+
+# Output Formats (you can choose multiple)
+output-format: text # Output reports in text, XML, and JSON formats
+
+# Output Directory for Reports (relative to the project root)
+output-directory: prospector_reports/
+
+# Fail Thresholds
+fail-under: C    # Fail the analysis if the maintainability index is below C
+fail-on: error   # Fail the analysis on any error level issues
+
+# Other Options
+quiet: true      # Run Prospector quietly (less verbose output)
+

@@ -1,0 +1,24 @@
+image: python:3.10  
+
+pipelines:
+  default:
+    - step:
+        caches:
+          - pip
+        name:  Dependency Installation, Code analysis, Static validation and code testing
+        script:
+          # Install Python dependencies and create a virtual environment
+          - apt-get update -qy
+          - apt-get install -y --no-install-recommends python3-venv
+          - echo "Creating Virtual Environment"
+          - python -m venv venv
+          - source venv/bin/activate
+          - echo "Installing Dependencies"
+          - pip install --upgrade pip
+          - pip install -r requirements.txt
+          - echo "Running pytest"
+          - pytest tests
+    - step:
+        name: Deploy
+        script:
+          - echo "Deploy stage (or next stage)"
